@@ -4,11 +4,7 @@ const app = express();
 const cors = require('cors')
 const port = process.env.PORT || 8081
 
-app.use(
-    cors({
-        origin: "https://dataforextension.onrender.com",
-    })
-)
+app.use(cors())
 
 app.get('/', (req, res) => {
     res.send('Aqui você pode obter dados (json) para testar extensions.');
