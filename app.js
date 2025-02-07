@@ -1,7 +1,14 @@
 require('dotenv').config()
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 3001
+const cors = require('cors')
+const port = process.env.PORT || 8081
+
+app.use(
+    cors({
+        origin: "https://dataforextension.onrender.com",
+    })
+)
 
 app.get('/', (req, res) => {
     res.send('Aqui você pode obter dados (json) para testar extensions.');
